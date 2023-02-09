@@ -1,0 +1,32 @@
+<header>
+    <div class="headerContainer">
+        <div class="headerSubContainer">
+            <div class="iconContainer headerText">Dashboard</div>
+            <div class="iconContainer spcl_iconContainer-1"><mat-icon class="subIconContainer-1">video_call</mat-icon></div>
+            <div class="iconContainer spcl_iconContainer-2"><mat-icon class="subIconContainer-2">help</mat-icon></div>
+        </div>
+        <div class="headerSubContainer">
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Search for anything</mat-label>
+                  <input type="text"
+                         placeholder="Pick one"
+                         aria-label="Number"
+                         matInput
+                         [formControl]="myControl"
+                         [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)='selectOption($event.option.value)'>
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option.tab}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form> 
+        </div>
+        <div class="headerSubContainer">
+            <div class="iconContainer spcl_iconContainer-1 spcl_iconContainer_right-1"><mat-icon [matBadge]="notification?.notificationBadge" matBadgeColor="warn">add_alert</mat-icon></div>
+            <div class="iconContainer spcl_iconContainer-1 spcl_iconContainer_right-2"><mat-icon  > message</mat-icon></div>
+            <div class="iconContainer spcl_iconContainer-1 spcl_iconContainer_right-3"><mat-icon  >account_circle</mat-icon></div>
+        </div>
+    </div>
+</header>

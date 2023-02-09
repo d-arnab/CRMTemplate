@@ -1,0 +1,13 @@
+.matsideNavCustom{
+    height: 100%;
+    background-color: black;
+    .matcolor{
+        mat-list-item{
+            color: white;
+        }
+        background-color: black;
+        .active-list-item {
+            color: #3F51B5 !important; /* Note: You could also use a custom theme */
+        }
+    }
+}

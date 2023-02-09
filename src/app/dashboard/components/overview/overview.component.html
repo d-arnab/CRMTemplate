@@ -1,0 +1,150 @@
+<div class="first_flex-container">
+    <div class="first_flex-subContainer summeryCardleftPadding">
+        <mat-card class="summeryCard">
+            <mat-card-header>
+              <mat-card-title>Summary</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="summeryTableContent">
+                <div class="overviewtable">
+                    <div class="rowstyling" [ngStyle]="{'background-color': getColor(i)}" *ngFor="let tabledata of Datasource; let i = index">
+                        <span class="overviewTableNamecell">{{tabledata.name}}</span>
+                        <span class="overviewTableWeightCell">{{tabledata.weight | number}}</span>
+                    </div>
+                </div>                  
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="first_flex-subContainer">
+        <mat-card class="productsCard">
+            <mat-card-header>
+              <mat-card-title>Top 5 products by spend</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div>
+                    <div>
+                      <div style="display: block; height: 165px;">
+                        <canvas id="productsSpendChart" #dashboardChart>
+                        </canvas>
+                        <div class="middleTextDiv">
+                            <p class="middleText">
+                                $1815.67
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                                  
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="first_flex-subContainer">
+        <mat-card class="ACoSexample-card">
+            <mat-card-header>
+              <mat-card-title>Highest ACoS Campaigns</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 ACoSTable">
+                    
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef>No.</th>
+                        <td mat-cell *matCellDef="let element">{{element.position}}</td>
+                    </ng-container>
+                    
+                    
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                    </ng-container>
+                    
+                    
+                    <ng-container matColumnDef="weight">
+                        <th mat-header-cell *matHeaderCellDef>Weight</th>
+                        <td mat-cell *matCellDef="let element">{{element.weight}}</td>
+                    </ng-container>
+                    
+                    
+                    <ng-container matColumnDef="symbol">
+                        <th mat-header-cell *matHeaderCellDef>Symbol</th>
+                        <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr
+                        mat-row
+                        *matRowDef="let row; columns: displayedColumns;"
+                    ></tr>
+                </table>                 
+            </mat-card-content>
+        </mat-card> 
+    </div>
+</div>
+
+<div class="Second_flex-container" style="overflow: auto;">
+    <div *ngFor="let saleData of salesData; index as i">
+        <mat-card class="scroll-card">
+            <mat-card-header>
+              <mat-card-title>{{saleData.heading}}</mat-card-title>
+              <mat-card-subtitle class="cardsubTitleColor">{{saleData.date}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="cardContentwrapper">
+                    <div>
+                        <p [ngStyle]="{'color': saleData.amount1 > 500 ? '#fe8164' : 'white' }">${{saleData.amount1 | number}}</p>
+                        <p>${{saleData.amount2 | number}}</p>
+                    </div>
+                    <div class="cardContentButton">
+                        <button mat-raised-button [ngStyle]="{'background-color': saleData.amount1 > 500 ? '#fe8164' : '#6fc796' }">{{(((saleData.amount1)/saleData.amount2)*100).toFixed(2) | number}}%<mat-icon>arrow_upward</mat-icon></button>
+                    </div>
+                </div>
+            </mat-card-content>
+          </mat-card>
+    </div>
+</div>
+
+<div class="third_flexContainer">
+    <div class="chartContainer-1">
+        <mat-card class="lineChartCard">
+            <mat-card-content>
+                <div class="flex-header-1">
+                    <div class="lineChartHeader leftText">
+                        <span class="lineChartHeader_leftText">Costs</span>
+                    </div>
+                    <div class="lineChartHeader">
+                        <span class="lineChartHeader_middleText">Aug 21 - Sep 21</span>
+                    </div>
+                    <div class="lineChartHeader">
+                        <span class="lineChartHeader_rightText">Costs</span>
+                    </div>
+                </div>
+                <div style="display: block; height: 90px">
+                    <canvas baseChart
+                            [data]="lineChartData"
+                            [options]="lineChartOptions"
+                            [type]="lineChartType"></canvas>
+                </div>                                 
+            </mat-card-content>
+          </mat-card>
+    </div>
+    <div class="chartContainer-2">
+        <mat-card>
+            <mat-card-content>
+                <div class="flex-header-2">
+                    <div class="lineChartHeader leftText">
+                        <span class="lineChartHeader_leftText" >Costs</span>
+                    </div>
+                    <div class="lineChartHeader">
+                        <span class="lineChartHeader_middleText">Aug 21 - Sep 21</span>
+                    </div>
+                    <div class="lineChartHeader">
+                        <span class="lineChartHeader_rightText">Costs</span>
+                    </div>
+                </div>
+                <div style="display: block; height: 90px">
+                    <canvas baseChart
+                            [data]="lineChartData"
+                            [options]="lineChartOptions"
+                            [type]="lineChartType"></canvas>
+                </div>                                 
+            </mat-card-content>
+          </mat-card>
+    </div>
+</div>

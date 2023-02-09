@@ -1,0 +1,29 @@
+<mat-sidenav-container class="matsideNavCustom" autosize>
+    <mat-sidenav #sidenav mode="side" opened="true" class="matcolor">
+        <mat-nav-list>
+            <mat-list-item (click)="isExpanded = !isExpanded">
+                <mat-icon mat-list-icon>account_circle</mat-icon>
+            </mat-list-item>
+            <mat-list-item [routerLink]="'dashboard'" routerLinkActive="active-list-item">
+                <mat-icon mat-list-icon>insert_chart</mat-icon>
+                <h4 mat-line *ngIf="isExpanded">Dashboard</h4>
+            </mat-list-item>
+            <mat-list-item [routerLink]="'dailyTask'" routerLinkActive="active-list-item">
+                <mat-icon mat-list-icon>assignment</mat-icon>
+                <h4 mat-line *ngIf="isExpanded">Assignment</h4>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active-list-item">
+                <mat-icon mat-list-icon>domain</mat-icon>
+                <h4 mat-line *ngIf="isExpanded">Management C</h4>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active-list-item">
+                <mat-icon mat-list-icon>folder_shared</mat-icon>
+                <h4 mat-line *ngIf="isExpanded">Management X</h4>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <div>
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>

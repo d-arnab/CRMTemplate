@@ -1,0 +1,76 @@
+
+.headerContainer{
+    height: 65px;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-wrap: nowrap;
+    .headerSubContainer{
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        width: 33%;
+        .iconContainer{
+            width: 30%;            
+            display:table-cell;
+            .subIconContainer-1{
+                padding-top: 15%;
+            }
+            .subIconContainer-2{
+                padding-top: 15%;
+            }
+        }
+        .spcl_iconContainer-1{
+            text-align: right;
+        }
+        .spcl_iconContainer-2{
+            padding-left: 5%;
+            text-align: left;
+        }
+        .spcl_iconContainer_right-1{
+            padding-top: 5%;
+            text-align: right;
+        }
+        .spcl_iconContainer_right-2{
+            padding-top: 5%;
+            text-align: center;
+        }
+        .spcl_iconContainer_right-3{
+            padding-top: 5%;
+            padding-right: 4%;
+            text-align: right;
+        }
+        .headerText{
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 5%;
+            font-weight: bold;
+            font-size: large;
+        }
+        .example-form {
+            width: 100%;
+            padding-top: 3%;
+        }
+        .mat-form-field-label {color: white !important;}
+        .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {background-color: #26221f !important; color: white !important }
+        .mat-form-field-empty.mat-form-field-label { color: white !important;}
+        .mat-form-field-ripple { background-color: #26221f;}
+        .mat-form-field-flex{ background-color: #26221f !important; border-radius: 20px !important;}
+
+        .example-full-width {
+        width: 100%;
+        }
+    }
+}
+
+// :host ::ng-deep .mat-form-field-underline {
+//     background-color: white !important; 
+//  }
+//  :host ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+//  background-color: white !important;
+//  }
+
+// ::ng-deep .mat-focused .mat-form-field-label {color: white !important;}
+// ::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {background-color: white !important; color: white !important }
+// ::ng-deep .mat-form-field-empty.mat-form-field-label { color: white !important;}
+// ::ng-deep .mat-form-field-ripple { background-color: white;}

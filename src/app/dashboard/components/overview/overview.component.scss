@@ -1,0 +1,243 @@
+@import "../../../../styles.scss";
+.first_flex-container{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 35vh;
+    @include for_breakpoint(mobile){
+        display: block;
+        height: auto;
+    }
+    @include for_breakpoint(tablet){
+        display: block;
+        height: auto;
+    } 
+    .first_flex-subContainer{
+        position: relative;
+        width: 29%;
+        padding: 2%;
+        @include for_breakpoint(mobile){
+            width: 80%;
+        }
+        @include for_breakpoint(tablet){
+            width: 90%;
+            padding: 1%;
+        } 
+        .summeryCard {
+            background-color: #b9c2b6;
+            width: 100%;
+            border-radius: 4%;
+            .summeryTableContent{
+                margin-bottom: 3%;
+            }
+            .overviewtable {
+                padding-left: 3%;
+                width: 100%;
+                .overviewTableWeightCell{
+                    float: right;
+                    position: relative;
+                    top: 25%;
+                    right: 5%;
+                }
+                .overviewTableNamecell{
+                    position: relative;
+                    top: 25%;
+                    left: 5%;
+                }
+                .rowstyling{
+                    width: 95%;
+                    position: relative;
+                    height: 2rem;
+                    border-radius: 10px;
+                    background-color: lavender;
+                    margin-bottom: 2%;
+                }
+            }
+        }
+        .productsCard{
+            background-color: #b9c2b6;
+            width: 100%;
+            border-radius: 4%;
+            .mat-card-header-text{
+                width: 100%;
+                text-align: center;
+            }
+            .middleTextDiv{
+                position: absolute;
+                width: 30%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                font-size: 20px;
+                bottom: 13%;
+            }
+            .middleText{
+                position: absolute;
+                left: 0;
+                // top: 50%;
+                transform: translateY(-150%) translateX(20%);
+                width: 100%;
+            }
+        }
+        
+        .ACoSexample-card{
+            background-color: gainsboro;
+            width: 100%;
+            border-radius: 4%;
+            .ACoSTable {
+                width: 100%;
+                background: gainsboro;
+                tr.mat-row{
+                    height: 28px
+                }
+                tr.mat-header-row{
+                    height: 28px
+                }
+              }
+              
+              .mat-row .mat-cell {
+                border-bottom: 1px solid transparent;
+                border-top: 1px solid transparent;
+              }
+        }
+    }
+    .summeryCardleftPadding{
+        padding-left: 1%;
+    }
+}
+
+.Second_flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 6vh;
+    .mat-card{
+        padding: 8px;
+    }
+    div {
+        margin: 10px;
+        // text-align: center;
+        // line-height: 75px;
+        // font-size: 30px;
+    }
+    .scroll-card{
+        color: antiquewhite;
+        background-color: #2b2723;
+        border-radius: 4%;
+        .mat-card-header{
+            height: 7vh;
+        }
+        .cardsubTitleColor{
+            color: rgb(88 84 81);
+        }
+    }
+    .cardContentwrapper{
+        display: flex;
+        flex-wrap: nowrap;
+        .cardContentButton{
+            padding-top: 10%;
+            padding-left: 10%;
+            button{
+                background-color: #6fc796;
+            }
+        }
+    }
+  }
+
+.Second_flex-container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.third_flexContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    @include for_breakpoint(mobile){
+        display: block;
+        height: auto;
+    }
+    @include for_breakpoint(tablet){
+        display: block;
+        height: auto;
+    }
+    .chartContainer-1{
+        left: 10px;
+        position: relative;
+        display: block;
+        width: 48%;
+        @include for_breakpoint(mobile){
+            width: 90%;
+            padding-bottom: 5vh;
+        }
+        @include for_breakpoint(tablet){
+            width: 95%;
+            padding-bottom: 5vh;
+        }
+        .lineChartCard{
+            background-color: #bfb294;
+        }
+        .flex-header-1{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .lineChartHeader{
+            text-align: center;
+            vertical-align: middle;
+            display:table-cell;
+            width: 33%;
+            .lineChartHeader_leftText{
+                font-weight: 500;
+                font-size: 26px;
+            }
+            .lineChartHeader_middleText{
+                font-weight: 100;
+                font-size: smaller;
+            }
+            .lineChartHeader_rightText{
+                font-weight: 500;
+                font-size: smaller;
+            }
+        }
+        .leftText{
+            text-align: left;
+        }
+    }
+    .chartContainer-2{
+        left: 32px;
+        position: relative;
+        display: block;
+        width: 48%;
+        @include for_breakpoint(mobile){
+            left: 10px;
+            width: 90%;
+            padding-bottom: 5vh;
+        }
+        @include for_breakpoint(tablet){
+            left: 10px;
+            width: 95%;
+            padding-bottom: 5vh;
+        }
+        .flex-header-2{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .lineChartHeader{
+            text-align: center;
+            vertical-align: middle;
+            display:table-cell;
+            width: 33%;
+            .lineChartHeader_leftText{
+                font-weight: 500;
+                font-size: 26px;
+            }
+            .lineChartHeader_middleText{
+                font-weight: 100;
+                font-size: smaller;
+            }
+            .lineChartHeader_rightText{
+                font-weight: 500;
+                font-size: smaller;
+            }
+        }
+        .leftText{
+            text-align: left;
+        }
+    }
+}
